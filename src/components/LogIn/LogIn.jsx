@@ -13,7 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 import MuiButtonSignIn from "../MuiComponents/Buttons/MuiButtonSignIn";
 import MuiTextLogin from "../MuiComponents/TextField/MuiTextLogin";
 
-import "./Login.css";
+import "./LogIn.css";
 
 //Toasts
 const LoginErrorToast = (message) => {
