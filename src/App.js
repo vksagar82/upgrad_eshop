@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { AuthContextProvider } from "../src/common/Auth/AuthContext";
+import ProductsContainer from "../src/components/Products/Products";
 import LogIn from "../src/components/LogIn/LogIn";
 
 const appTheme = createTheme({
@@ -23,6 +24,8 @@ function App() {
           <Routes>
             <Route path="/login" element={<LogIn />} />
             <Route exact path="/" element={<Navigate to="/LogIn" />} />
+            <Route path="/products/:id" element={<ProductDetail />} />
+            <Route exact path="/products" element={<ProductsContainer />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
