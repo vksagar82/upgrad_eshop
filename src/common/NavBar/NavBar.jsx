@@ -75,7 +75,6 @@ function NavigationBar(props) {
                   onClick={() => navigate("/login")}
                   value="Login"
                 />
-                { /* To be Implemented */ }
                 <MuiButtonNavBarLoggedIn
                   onClick={() => navigate("/signup")}
                   value="Sign Up"

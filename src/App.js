@@ -4,6 +4,7 @@ import { ThemeProvider, createTheme } from "@mui/material";
 import { AuthContextProvider } from "../src/common/Auth/AuthContext";
 import ProductsContainer from "../src/components/Products/Products";
 import LogIn from "../src/components/LogIn/LogIn";
+import SignUp from "../src/components/SignUp/Signup";
 
 const appTheme = createTheme({
   palette: {
@@ -26,6 +27,7 @@ function App() {
             <Route exact path="/" element={<Navigate to="/LogIn" />} />
             <Route path="/products/:id" element={<ProductDetail />} />
             <Route exact path="/products" element={<ProductsContainer />} />
+            <Route path="/signup" element={<SignUp />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>
