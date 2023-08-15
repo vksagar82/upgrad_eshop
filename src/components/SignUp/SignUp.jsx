@@ -7,6 +7,9 @@ import NavigationBar from "../../common/NavBar/NavBar";
 import MuiButtonSubmitButton from "../MuiComponents/Buttons/MuiButtonSubmitButton";
 import MuiTextSignup from "../MuiComponents/TextField/MuiTextSignup";
 
+//Toasts
+import { SuccessToast, ErrorToast } from "../../common/Toasts/Toasts";
+
 import "./Signup.css";
 
 function Signup() {
@@ -59,11 +62,11 @@ function Signup() {
           contactNumber: contactNumber,
         })
         .then(function (response) {
-          alert(response.data.message);
+          SuccessToast(response.data.message);
           navigate("/login");
         })
         .catch(function (error) {
-          alert(
+          ErrorToast(
             "Error: There was an issue in registering the user, please try again later."
           );
         });
