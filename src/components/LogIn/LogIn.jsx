@@ -6,8 +6,6 @@ import axios from "axios";
 import { AuthContext } from "../../common/Auth/AuthContext";
 import NavigationBar from "../../common/NavBar/NavBar";
 import React from "react";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 //MUI Components
 import MuiButtonSignIn from "../MuiComponents/Buttons/MuiButtonSignIn";
@@ -16,18 +14,7 @@ import MuiTextLogin from "../MuiComponents/TextField/MuiTextLogin";
 import "./LogIn.css";
 
 //Toasts
-const LoginErrorToast = (message) => {
-  toast.error(message, {
-    position: "top-center",
-    autoClose: 3000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    theme: "colored",
-  });
-};
+import { ErrorToast } from "../../common/Toasts/Toasts";
 
 function Login() {
   const navigate = useNavigate();
@@ -93,7 +80,7 @@ function Login() {
           }
         })
         .catch((error) => {
-          LoginErrorToast("Invalid Credentials");
+          ErrorToast("Invalid Credentials");
         });
     }
   };
