@@ -1,8 +1,7 @@
 import { Fragment, useContext, useEffect, useState } from "react";
 import Select from "react-select";
 import { AuthContext } from "../../common/Auth/AuthContext";
-import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import {
   Box,
   Button,
@@ -18,30 +17,12 @@ import NavigationBar from "../../common/NavBar/NavBar";
 
 import "./Orders.css";
 
-const notifySuccess = (message) => {
-  toast.success(message, {
-    position: toast.POSITION.TOP_RIGHT,
-    theme: "colored",
-  });
-};
+//Toasts
+import { SuccessToast, ErrorToast } from "../../common/Toasts/Toasts";
 
-const notifyError = (message) => {
-  toast.error(message, {
-    position: toast.POSITION.TOP_RIGHT,
-    theme: "colored",
-  });
-};
-
-const notifyOrderConfirmed = () => {
-  toast.info("Your order is confirmed", {
-    position: toast.POSITION.TOP_RIGHT,
-    theme: "colored",
-  });
-};
 const OrderConfirmation = () => {
   setTimeout(() => {
-    notifyOrderConfirmed();
-    notifySuccess("Order placed successfully!");
+    SuccessToast("Order placed successfully!");
   }, 1000);
 };
 
@@ -95,7 +76,7 @@ function Orders() {
         .catch((error) => console.error("Error placing order:", error));
     } else {
       if (activeStep === 1 && currentAddress === undefined) {
-        notifyError("Please select address!");
+        ErrorToast("Please select address!");
       } else {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
       }
@@ -153,7 +134,7 @@ function Orders() {
           },
         })
         .then(() => {
-          notifySuccess("Address is successfully saved.");
+          SuccessToast("Address is successfully saved.");
 
           axios
             .get(`http://localhost:8080/api/addresses`, {
@@ -167,7 +148,7 @@ function Orders() {
             .catch((error) => console.error("Error fetching data:", error));
         })
         .catch(() =>
-          notifyError(
+          ErrorToast(
             "There was an issue in saving the address. Please provide correct details."
           )
         );
