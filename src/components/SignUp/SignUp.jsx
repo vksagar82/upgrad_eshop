@@ -10,7 +10,7 @@ import MuiTextSignup from "../MuiComponents/TextField/MuiTextSignup";
 //Toasts
 import { SuccessToast, ErrorToast } from "../../common/Toasts/Toasts";
 
-import "./Signup.css";
+import "./SignUp.css";
 
 function Signup() {
   const navigate = useNavigate();

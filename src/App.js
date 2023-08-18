@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { AuthContextProvider } from "../src/common/Auth/AuthContext";
 import ProductsContainer from "../src/components/Products/Products";
-import LogIn from "../src/components/LogIn/LogIn";
-import SignUp from "../src/components/SignUp/Signup";
+import LogIn from "./components/Login/LogIn";
+import SignUp from "./components/SignUp/SignUp";
 
 const appTheme = createTheme({
   palette: {

@@ -16,7 +16,7 @@ import "./LogIn.css";
 //Toasts
 import { ErrorToast } from "../../common/Toasts/Toasts";
 
-function Login() {
+function LogIn() {
   const navigate = useNavigate();
   const { setToken, setUserId, setIsAdmin } = useContext(AuthContext);
   const [email, setEmail] = useState("");
@@ -43,7 +43,7 @@ function Login() {
     const header = { headers: { "Content-Type": "application/json" } };
 
     if (email && password) {
-      let request = await axios
+      await axios
         .post("http://localhost:8080/api/auth/signin", body, header)
         .then((response) => {
           const token = response.data.token;
@@ -77,10 +77,12 @@ function Login() {
                 setUserId(null);
                 navigate("/products");
               });
+          } else {
+            ErrorToast("Invalid Credentials");
           }
         })
         .catch((error) => {
-          ErrorToast("Invalid Credentials");
+          ErrorToast("Something Went Wrong Retrieving User Details");
         });
     }
   };
@@ -126,4 +128,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LogIn;
