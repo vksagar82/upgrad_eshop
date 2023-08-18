@@ -164,8 +164,7 @@ function ProductsContainer() {
               </Select>
             </FormControl>
           </div>
-
-          <Grid className="grid-container">
+          <Grid container spacing={5} style={{ margin: "10px 0" }}>
             {data.map((item) => (
               <ProductCard
                 key={item.id}
