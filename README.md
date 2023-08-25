@@ -5,4 +5,11 @@ change directory to the project folder and run `npm install`
 
 \*\*once the node modules are installed locally, then run `npm start`
 
-**username: ADMIN@upgrad.com and password: ADMIN must be created via the backend API with role ADMIN**
+**On Login a default admin account is created**
+
+```
+email: admin@upgrad.com
+
+password: admin123
+
+```
