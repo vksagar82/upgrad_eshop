@@ -59,7 +59,7 @@ function Orders() {
           `http://localhost:8080/api/orders`,
           {
             quantity: state.quantity,
-            user: userId ?? "64cf3c35e883586a15b14372", //Admin userID hardcoded as we can get only Admin UserID
+            user: userId, //?? "64cf3c35e883586a15b14372", //Admin userID hardcoded as we can get only Admin UserID
             product: state.id,
             address: currentAddress.id,
           },
@@ -125,7 +125,7 @@ function Orders() {
         state: stateName,
         landmark: landmark,
         zipcode: zipCode,
-        user: userId ?? "64cf3c35e883586a15b14372", //HardCoded the Admin UserID as this needs a valid
+        user: userId, //?? "64cf3c35e883586a15b14372", //HardCoded the Admin UserID as this needs a valid
       };
       axios
         .post(`http://localhost:8080/api/addresses`, addressObj, {
