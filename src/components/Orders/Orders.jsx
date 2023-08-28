@@ -65,7 +65,7 @@ function Orders() {
           },
           {
             headers: {
-              Authorization: `Bearer ${authToken}`,
+              "x-auth-token": `${authToken}`,
             },
           }
         )
@@ -130,7 +130,7 @@ function Orders() {
       axios
         .post(`http://localhost:8080/api/addresses`, addressObj, {
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            "x-auth-token": `${authToken}`,
           },
         })
         .then(() => {
@@ -139,7 +139,7 @@ function Orders() {
           axios
             .get(`http://localhost:8080/api/addresses`, {
               headers: {
-                Authorization: `Bearer ${authToken}`,
+                "x-auth-token": `${authToken}`,
               },
             })
             .then((response) => {
@@ -162,7 +162,7 @@ function Orders() {
       axios
         .get(`http://localhost:8080/api/addresses`, {
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            "x-auth-token": `${authToken}`,
           },
         })
         .then((response) => {

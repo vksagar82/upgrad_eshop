@@ -34,7 +34,7 @@ function ProductsContainer() {
       axios
         .get("http://localhost:8080/api/products/categories", {
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            "x-auth-token": `${authToken}`,
           },
         })
         .then(function (response) {
@@ -48,7 +48,7 @@ function ProductsContainer() {
       axios
         .get("http://localhost:8080/api/products", {
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            "x-auth-token": `${authToken}`,
           },
         })
         .then((response) => {
@@ -105,7 +105,7 @@ function ProductsContainer() {
       axios
         .delete(`http://localhost:8080/api/products/${id}`, {
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            "x-auth-token": `${authToken}`,
           },
         })
         .then(function () {

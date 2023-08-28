@@ -39,7 +39,7 @@ function AddEditProduct() {
     axios
       .get("http://localhost:8080/api/products/categories", {
         headers: {
-          Authorization: `Bearer ${authToken}`,
+          "x-auth-token": `${authToken}`,
         },
       })
       .then(function (response) {
@@ -57,7 +57,7 @@ function AddEditProduct() {
       axios
         .get(`http://localhost:8080/api/products/${id}`, {
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            "x-auth-token": `${authToken}`,
           },
         })
         .then((response) => {
@@ -115,7 +115,7 @@ function AddEditProduct() {
             },
             {
               headers: {
-                Authorization: `Bearer ${authToken}`,
+                "x-auth-token": `${authToken}`,
               },
             }
           )
@@ -143,7 +143,7 @@ function AddEditProduct() {
             },
             {
               headers: {
-                Authorization: `Bearer ${authToken}`,
+                "x-auth-token": `${authToken}`,
               },
             }
           )
