@@ -16,34 +16,6 @@ import "./LogIn.css";
 //Toasts
 import { ErrorToast } from "../../common/Toasts/Toasts";
 
-const adminCreate = async () => {
-  const adminBody = JSON.stringify({
-    email: "admin@upgrad.com",
-    role: ["admin"],
-    password: "admin123",
-    firstName: "admin",
-    lastName: "admin",
-    contactNumber: "1234567890",
-  });
-  const header = { headers: { "Content-Type": "application/json" } };
-  try {
-    const response = await axios.post(
-      "http://localhost:8080/api/auth/signup",
-      adminBody,
-      header
-    );
-    if (response.status === 200) {
-      console.log("admin created");
-    }
-  } catch (e) {
-    if (e.response.data.message === "Error: Email is already in use!") {
-      console.log("admin account exists");
-    } else {
-      console.log("Something went wrong creating admin account");
-    }
-  }
-};
-
 function LogIn() {
   const navigate = useNavigate();
   const { setToken, setUserId, setIsAdmin } = useContext(AuthContext);
@@ -54,9 +26,6 @@ function LogIn() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    //Create dummy admin account
-    //to make it easier for testing
-    adminCreate();
 
     setEmailError(false);
     setPasswordError(false);
