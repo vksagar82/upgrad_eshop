@@ -10,7 +10,7 @@ import NavigationBar from "../../common/NavBar/NavBar";
 import { SuccessToast, ErrorToast } from "../../common/Toasts/Toasts";
 
 //MUI Components
-import MuiButtonSubmitButton from "../../components/MuiComponents/Buttons/MuiButtonSubmitButton";
+import MuiButtonSubmitButton from "../../common/MuiComponents/Buttons/MuiButtonSubmitButton";
 
 import "./AddEditProduct.css";
 

@@ -15,6 +15,8 @@ import ProductCard from "../ProductCard/ProductCard";
 import axios from "axios";
 import { AuthContext } from "../../common/Auth/AuthContext";
 import { useNavigate } from "react-router-dom";
+
+//Toasts
 import { ErrorToast } from "../../common/Toasts/Toasts";
 
 import "./Products.css";
@@ -101,24 +103,21 @@ function ProductsContainer() {
   };
 
   const handleDeleteCall = (id) => {
-    if (window.confirm("Are you sure you want to delete the product?")) {
-      axios
-        .delete(`http://localhost:8080/api/products/${id}`, {
-          headers: {
-            "x-auth-token": `${authToken}`,
-          },
-        })
-        .then(function () {
-          triggerDataFetch();
-        })
-        .catch(function (error) {
-          ErrorToast(
-            `Error: There was an issue in deleting product, please try again later.`
-          );
-        });
-    }
+    axios
+      .delete(`http://localhost:8080/api/products/${id}`, {
+        headers: {
+          "x-auth-token": `${authToken}`,
+        },
+      })
+      .then(function () {
+        triggerDataFetch();
+      })
+      .catch(function (error) {
+        ErrorToast(
+          `Error: There was an issue in deleting product, please try again later.`
+        );
+      });
   };
-
   return (
     <Fragment>
       <NavigationBar

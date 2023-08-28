@@ -9,15 +9,35 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
+import { useState } from "react";
 
 import "./ProductCard.css";
 
 //MUI Components
-import MuiButtonBuyProduct from "../../components/MuiComponents/Buttons/MuiButtonBuyProduct";
+import MuiButtonBuyProduct from "../../common/MuiComponents/Buttons/MuiButtonBuyProduct";
+import MuiConfirmDialog from "../../common/MuiComponents/Dialog/MuiConfirmDialog";
 
 function ProductCard(props) {
   const { productData, isAdmin, handleDeleteCall, navigate } = props;
   const key = props.productData.id;
+  const [openDialog, setOpenDialog] = useState(false);
+
+  const handleOpenDialog = () => {
+    setOpenDialog(true);
+  };
+
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
+  };
+
+  const handleDeleteWithConfirmation = () => {
+    handleOpenDialog();
+  };
+
+  const handleConfirmDelete = () => {
+    handleDeleteCall(); // Perform actual delete action
+    handleCloseDialog();
+  };
 
   return (
     <Grid key={key} item xs={4}>
@@ -60,9 +80,16 @@ function ProductCard(props) {
           </div>
           {isAdmin && (
             <div>
-              <IconButton onClick={handleDeleteCall}>
+              <IconButton onClick={handleDeleteWithConfirmation}>
                 <DeleteIcon />
               </IconButton>
+              <MuiConfirmDialog
+                open={openDialog}
+                onClose={handleCloseDialog}
+                onConfirm={handleConfirmDelete}
+                title="Confirm Delete"
+                content="Are you sure you want to delete this product?"
+              />
               <IconButton
                 onClick={() => navigate(`/edit-product/${productData.id}`)}
               >

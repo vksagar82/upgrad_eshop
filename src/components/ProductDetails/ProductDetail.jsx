@@ -10,7 +10,11 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import NavigationBar from "../../common/NavBar/NavBar";
-import MuiButtonPlaceOrder from "../MuiComponents/Buttons/MuiButtonPlaceOrder";
+
+//Custom MUI
+import MuiButtonPlaceOrder from "../../common/MuiComponents/Buttons/MuiButtonPlaceOrder";
+
+//Toasts
 import { ErrorToast } from "../../common/Toasts/Toasts";
 
 import "./ProductDetail.css";
