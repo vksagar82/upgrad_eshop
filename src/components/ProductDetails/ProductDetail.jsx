@@ -10,7 +10,11 @@ import {
 } from "@mui/material";
 import axios from "axios";
 import NavigationBar from "../../common/NavBar/NavBar";
-import MuiButtonPlaceOrder from "../MuiComponents/Buttons/MuiButtonPlaceOrder";
+
+//Custom MUI
+import MuiButtonPlaceOrder from "../../common/MuiComponents/Buttons/MuiButtonPlaceOrder";
+
+//Toasts
 import { ErrorToast } from "../../common/Toasts/Toasts";
 
 import "./ProductDetail.css";
@@ -28,7 +32,7 @@ function ProductDetail() {
       axios
         .get("http://localhost:8080/api/products/categories", {
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            "x-auth-token": `${authToken}`,
           },
         })
         .then(function (response) {
@@ -42,7 +46,7 @@ function ProductDetail() {
       axios
         .get(`http://localhost:8080/api/products/${id}`, {
           headers: {
-            Authorization: `Bearer ${authToken}`,
+            "x-auth-token": `${authToken}`,
           },
         })
         .then((response) => {

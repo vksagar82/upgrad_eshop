@@ -4,8 +4,10 @@ import { useState } from "react";
 import LockIcon from "@mui/icons-material/Lock";
 import axios from "axios";
 import NavigationBar from "../../common/NavBar/NavBar";
-import MuiButtonSubmitButton from "../MuiComponents/Buttons/MuiButtonSubmitButton";
-import MuiTextSignup from "../MuiComponents/TextField/MuiTextSignup";
+
+//Custom MUI
+import MuiButtonSubmitButton from "../../common/MuiComponents/Buttons/MuiButtonSubmitButton";
+import MuiTextSignup from "../../common/MuiComponents/TextField/MuiTextSignup";
 
 //Toasts
 import { SuccessToast, ErrorToast } from "../../common/Toasts/Toasts";

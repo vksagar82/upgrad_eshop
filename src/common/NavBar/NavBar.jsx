@@ -9,9 +9,9 @@ import { AuthContext } from "../../common/Auth/AuthContext";
 import React from "react";
 
 //MUI Components
-import MuiButtonNavBarLoggedIn from "../../components/MuiComponents/Buttons/MuiButtonNavBarLoggedIn";
-import MuiNavBarButtonLogout from "../../components/MuiComponents/Buttons/MuiButtonNavBarLogout";
-import MuiIconButton from "../../components/MuiComponents/IconButton/MuiIconButton";
+import MuiButtonNavBarLoggedIn from "../MuiComponents/Buttons/MuiButtonNavBarLoggedIn";
+import MuiNavBarButtonLogout from "../MuiComponents/Buttons/MuiButtonNavBarLogout";
+import MuiIconButton from "../MuiComponents/IconButton/MuiIconButton";
 
 function NavigationBar(props) {
   const { isLogged, isAdmin, searchTerm, onSearchChange } = props;
