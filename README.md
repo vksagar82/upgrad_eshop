@@ -6,6 +6,6 @@ change directory to the project folder and run `npm install`
 \*\*once the node modules are installed locally, then run `npm start`
 
 ```
-Please create an admin account in using the backend
+Please create an admin account using the signUP API in the backend
 
 ```
