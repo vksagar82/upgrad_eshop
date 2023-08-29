@@ -1,4 +1,14 @@
 .card-content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+/* Additional styles for CardContent */
+.card-content-wrapper {
+  height: 150px;
+  overflow-y: auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }

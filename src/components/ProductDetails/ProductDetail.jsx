@@ -110,7 +110,8 @@ function ProductDetail() {
                 component="div"
                 sx={{ mb: 2 }}
               >
-                Category: {product.category}
+                Category:{" "}
+                <span style={{ fontWeight: "bold" }}>{product.category}</span>
               </Typography>
               <Typography
                 gutterBottom

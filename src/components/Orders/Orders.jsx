@@ -181,7 +181,7 @@ function Orders() {
         Quantity: {state.quantity}
       </Typography>
       <Typography gutterBottom variant="body1" component="div" sx={{ mb: 2 }}>
-        Category: {state.category}
+        Category: <span style={{ fontWeight: "bold" }}>{state.category}</span>
       </Typography>
       <Typography
         gutterBottom

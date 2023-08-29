@@ -51,8 +51,8 @@ function ProductCard(props) {
           }
           title={productData.name}
         />
-        <CardContent sx={{ height: 150 }}>
-          <div className=".card-content">
+        <CardContent className="card-content-wrapper">
+          <div className="card-content">
             <Typography gutterBottom variant="h5" component="div">
               {productData.name}
             </Typography>
