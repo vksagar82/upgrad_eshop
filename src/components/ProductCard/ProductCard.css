@@ -11,4 +11,5 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  scrollbar-width: auto;
 }

@@ -51,7 +51,7 @@ function ProductCard(props) {
           }
           title={productData.name}
         />
-        <CardContent className="card-content-wrapper">
+        <CardContent className="card-content-wrapper custom-scrollbar">
           <div className="card-content">
             <Typography gutterBottom variant="h5" component="div">
               {productData.name}
